@@ -1,48 +1,111 @@
 # Northstar Forge
 
-Northstar Forge is a compact LangGraph project that turns a rough idea into a
-practical project brief. Instead of returning one placeholder sentence, it now
-builds a small execution packet with:
+Northstar Forge is a portfolio-ready LangGraph project that turns a rough idea
+into a clear execution brief. It acts like a focused project architect:
+classifying the work, shaping the objective, mapping milestones, surfacing
+risks, and producing practical next steps.
 
-- a clarified objective
-- a target audience
-- staged milestones
-- concrete deliverables
-- risks to watch
-- immediate first actions
+This project is designed to showcase strong agent workflow thinking without
+depending on an external model provider. It runs locally, responds instantly,
+and demonstrates how a graph can transform unstructured input into structured,
+useful output.
 
-## Why this project exists
+## What it does
 
-This project is designed to feel like a real starter app, not just a smoke
-test. It stays offline-first, so you can run it locally without wiring in model
-providers or API keys.
+Given a raw prompt such as:
 
-## How to use it
-
-Start the dev server:
-
-```bash
-./.venv314/bin/langgraph dev --host 127.0.0.1 --port 2024 --no-browser
+```text
+Build a small internal dashboard for tracking sales outreach
 ```
 
-Then open LangGraph Studio or the local API docs and send a goal such as:
+Northstar Forge returns a structured brief with:
 
-- `Build a small internal dashboard for tracking sales outreach`
-- `Create a content engine for a design newsletter`
-- `Automate weekly reporting for our operations team`
-- `Research the best launch plan for a new mobile habit app`
+- a refined objective
+- a target audience
+- milestone planning
+- deliverables for the first release
+- execution risks
+- immediate first actions
 
-## What the graph does
+## Why it is worth showcasing
+
+- It demonstrates a real multi-step LangGraph workflow instead of a one-node demo.
+- It solves a practical problem: converting vague ideas into actionable plans.
+- It is offline-first, which makes it fast to run and easy to demo.
+- It has a clean identity, clear output format, and an obvious upgrade path.
+
+## Workflow
 
 The graph runs through four stages:
 
-1. Intake the user goal and classify the project type.
-2. Build milestones and deliverables for that type of work.
-3. Surface common risks and fast wins.
-4. Return a structured project brief.
+1. `intake_goal`
+   It extracts the latest user request and classifies the project type.
+2. `map_project`
+   It chooses milestones and deliverables based on the kind of project.
+3. `assess_risks`
+   It adds execution risks and high-leverage quick wins.
+4. `draft_response`
+   It returns a polished planning brief as the final agent response.
 
-## Files that matter
+## Showcase Scenarios
 
-- `langgraph.json` points LangGraph at the compiled graph.
-- `src/agent/graph.py` contains the full workflow.
-- `pyproject.toml` defines the project metadata and dependencies.
+Northstar Forge is especially good for demos around:
+
+- internal tools
+- startup ideas
+- AI products
+- automation workflows
+- research initiatives
+- operations planning
+- content systems
+
+Example prompts:
+
+- `Design a launch-ready habit tracking app for university students`
+- `Automate weekly operations reporting for a remote team`
+- `Create a content engine for a product design newsletter`
+- `Research the strongest go-to-market path for an AI scheduling assistant`
+
+## Run Locally
+
+From this directory:
+
+```bash
+python3 -m venv .venv314
+./.venv314/bin/pip install -U pip
+./.venv314/bin/pip install "langgraph-cli[inmem]" "langgraph>=0.6.0,<2" "langchain-core>=1.3.3"
+./.venv314/bin/langgraph dev --host 127.0.0.1 --port 2024 --no-browser
+```
+
+Then open:
+
+- API Docs: `http://127.0.0.1:2024/docs`
+- LangGraph Studio: `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`
+
+## Project Structure
+
+- `src/agent/graph.py`
+  The core LangGraph workflow and planning logic.
+- `langgraph.json`
+  The LangGraph entrypoint configuration.
+- `pyproject.toml`
+  Project metadata and Python dependencies.
+- `.env.example`
+  Placeholder env file for future provider integrations.
+
+## Future Upgrades
+
+This version is intentionally local and deterministic. Good next steps for a
+larger portfolio build would be:
+
+- plug in an LLM for more adaptive planning
+- add memory for multi-turn project refinement
+- expose structured JSON output for downstream tools
+- build a custom frontend for interactive planning sessions
+- export briefs to markdown or Notion-style documents
+
+## Summary
+
+Northstar Forge is no longer a generic sample. It is now a focused agent
+project with a clear identity, practical output, and a polished story that is
+easy to demo and easy to extend.

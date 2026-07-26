@@ -1,7 +1,7 @@
 [project]
 name = "northstar-forge"
 version = "0.1.0"
-description = "An offline-first LangGraph project architect that turns a raw goal into a plan."
+description = "Northstar Forge is a showcase-ready LangGraph planning agent that turns rough ideas into execution briefs."
 requires-python = ">=3.12"
 dependencies = [
     "langgraph>=0.6.0,<2",
