@@ -1,0 +1,11 @@
+{
+  "python_version": "3.14",
+  "graphs": {
+    "northstar_forge": "./src/agent/graph.py:graph"
+  },
+  "source": {
+    "kind": "uv",
+    "root": "."
+  },
+  "env": ".env"
+}
