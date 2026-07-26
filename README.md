@@ -1,82 +1,93 @@
-<div align="center">
-  <a href="https://www.langchain.com/langgraph">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset=".github/images/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset=".github/images/logo-light.svg">
-      <img alt="LangGraph Logo" src=".github/images/logo-dark.svg" width="50%">
-    </picture>
-  </a>
-</div>
+# Northstar Forge
 
-<div align="center">
-  <h3>Low-level orchestration framework for building stateful agents.</h3>
-</div>
+Northstar Forge is a portfolio-ready LangGraph project that turns a rough idea
+into a clear execution brief. It acts like a focused project architect:
+classifying the work, shaping the objective, mapping milestones, surfacing
+risks, and producing practical next steps.
 
-<div align="center">
-  <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/pypi/l/langgraph" alt="PyPI - License"></a>
-  <a href="https://pypistats.org/packages/langgraph" target="_blank"><img src="https://img.shields.io/pepy/dt/langgraph" alt="PyPI - Downloads"></a>
-  <a href="https://pypi.org/project/langgraph/" target="_blank"><img src="https://img.shields.io/pypi/v/langgraph.svg?label=%20" alt="Version"></a>
-  <a href="https://x.com/langchain_oss" target="_blank"><img src="https://img.shields.io/twitter/url/https/twitter.com/langchain_oss.svg?style=social&label=Follow%20%40LangChain" alt="Twitter / X"></a>
-</div>
+This project is designed to showcase strong agent workflow thinking without
+depending on an external model provider. It runs locally, responds instantly,
+and demonstrates how a graph can transform unstructured input into structured,
+useful output.
 
-<br>
+## What it does
 
-Trusted by companies shaping the future of agents – including Klarna, Replit, Elastic, and more – LangGraph is a low-level orchestration framework for building, managing, and deploying long-running, stateful agents.
+Given a raw prompt such as:
 
-```bash
-pip install -U langgraph
+```text
+Build a small internal dashboard for tracking sales outreach
 ```
 
-> [!TIP]
-> If you're looking to quickly build agents, check out **[Deep Agents](https://docs.langchain.com/oss/python/deepagents/overview)** — a higher-level package built on LangGraph for agents that can plan, use subagents, and leverage file systems for complex tasks.
+Northstar Forge returns a structured brief with:
 
-For an equivalent JS/TS library, check out [LangGraph.js](https://github.com/langchain-ai/langgraphjs) and the [JS docs](https://docs.langchain.com/oss/javascript/langgraph/overview).
+- a refined objective
+- a target audience
+- milestone planning
+- deliverables for the first release
+- execution risks
+- immediate first actions
 
-## Why use LangGraph?
+## Workflow
 
-LangGraph provides low-level supporting infrastructure for *any* long-running, stateful workflow or agent:
+The graph runs through four stages:
 
-- **[Durable execution](https://docs.langchain.com/oss/python/langgraph/durable-execution)** — Build agents that persist through failures and can run for extended periods, automatically resuming from exactly where they left off.
-- **[Human-in-the-loop](https://docs.langchain.com/oss/python/langgraph/interrupts)** — Seamlessly incorporate human oversight by inspecting and modifying agent state at any point during execution.
-- **[Comprehensive memory](https://docs.langchain.com/oss/python/langgraph/memory)** — Create truly stateful agents with both short-term working memory for ongoing reasoning and long-term persistent memory across sessions.
-- **[Debugging with LangSmith](https://www.langchain.com/langsmith)** — Gain deep visibility into complex agent behavior with visualization tools that trace execution paths, capture state transitions, and provide detailed runtime metrics.
-- **[Production-ready deployment](https://docs.langchain.com/langsmith/deployments)** — Deploy sophisticated agent systems confidently with scalable infrastructure designed to handle the unique challenges of stateful, long-running workflows.
+1. `intake_goal`
+   It extracts the latest user request and classifies the project type.
+2. `map_project`
+   It chooses milestones and deliverables based on the kind of project.
+3. `assess_risks`
+   It adds execution risks and high-leverage quick wins.
+4. `draft_response`
+   It returns a polished planning brief as the final agent response.
 
-> [!TIP]
-> For developing, debugging, and deploying AI agents and LLM applications, see [LangSmith](https://docs.langchain.com/langsmith/home).
+## Showcase Scenarios
 
-## LangGraph ecosystem
+Northstar Forge is especially good for demos around:
 
-While LangGraph can be used standalone, it also integrates seamlessly with any LangChain product, giving developers a full suite of tools for building agents.
+- internal tools
+- startup ideas
+- AI products
+- automation workflows
+- research initiatives
+- operations planning
+- content systems
 
-To improve your LLM application development, pair LangGraph with:
+Example prompts:
 
-- [Deep Agents](https://docs.langchain.com/oss/python/deepagents/overview) – Build agents that can plan, use subagents, and leverage file systems for complex tasks.
-- [LangChain](https://docs.langchain.com/oss/python/langchain/overview) – Provides integrations and composable components to streamline LLM application development.
-- [LangSmith](https://www.langchain.com/langsmith) – Helpful for agent evals and observability. Debug poor-performing LLM app runs, evaluate agent trajectories, gain visibility in production, and improve performance over time.
-- [LangSmith Deployment](https://docs.langchain.com/langsmith/deployments) – Deploy and scale agents effortlessly with a purpose-built deployment platform for long-running, stateful workflows. Discover, reuse, configure, and share agents across teams – and iterate quickly with visual prototyping in [LangSmith Studio](https://docs.langchain.com/langsmith/studio).
+- `Design a launch-ready habit tracking app for university students`
+- `Automate weekly operations reporting for a remote team`
+- `Create a content engine for a product design newsletter`
+- `Research the strongest go-to-market path for an AI scheduling assistant`
 
----
+## Run Locally
 
-## Documentation
+From this directory:
 
-- [docs.langchain.com](https://docs.langchain.com/oss/python/langgraph/overview) – Comprehensive documentation, including conceptual overviews and guides
-- [reference.langchain.com/python/langgraph](https://reference.langchain.com/python/langgraph) – API reference docs for LangGraph packages
-- [LangGraph Quickstart](https://docs.langchain.com/oss/python/langgraph/quickstart) – Get started building with LangGraph
-- [Chat LangChain](https://chat.langchain.com/) – Chat with the LangChain documentation and get answers to your questions
+```bash
+python3 -m venv .venv314
+./.venv314/bin/pip install -U pip
+./.venv314/bin/pip install "langgraph-cli[inmem]" "langgraph>=0.6.0,<2" "langchain-core>=1.3.3"
+./.venv314/bin/langgraph dev --host 127.0.0.1 --port 2024 --no-browser
+```
 
-**Discussions**: Visit the [LangChain Forum](https://forum.langchain.com) to connect with the community and share all of your technical questions, ideas, and feedback.
+Then open:
 
-## Additional resources
+- API Docs: `http://127.0.0.1:2024/docs`
+- LangGraph Studio: `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`
 
-- **[Guides](https://docs.langchain.com/oss/python/learn)** – Quick, actionable code snippets for topics such as streaming, adding memory & persistence, and design patterns (e.g. branching, subgraphs, etc.).
-- **[LangChain Academy](https://academy.langchain.com/courses/intro-to-langgraph)** – Learn the basics of LangGraph in our free, structured course.
-- **[Case studies](https://www.langchain.com/built-with-langgraph)** – Hear how industry leaders use LangGraph to ship AI applications at scale.
-- [Contributing Guide](https://docs.langchain.com/oss/python/contributing/overview) – Learn how to contribute to LangChain projects and find good first issues.
-- [Code of Conduct](https://github.com/langchain-ai/langchain/?tab=coc-ov-file) – Our community guidelines and standards for participation.
+## Project Structure
 
----
+- `src/agent/graph.py`
+  The core LangGraph workflow and planning logic.
+- `langgraph.json`
+  The LangGraph entrypoint configuration.
+- `pyproject.toml`
+  Project metadata and Python dependencies.
+- `.env.example`
+  Placeholder env file for future provider integrations.
 
-## Acknowledgements
+## Summary
 
-LangGraph is inspired by [Pregel](https://research.google/pubs/pub37252/) and [Apache Beam](https://beam.apache.org/). The public interface draws inspiration from [NetworkX](https://networkx.org/documentation/latest/). LangGraph is built by LangChain Inc, the creators of LangChain, but can be used without LangChain.
+Northstar Forge is no longer a generic sample. It is now a focused agent
+project with a clear identity, practical output, and a polished story that is
+easy to demo and easy to extend.
