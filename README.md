@@ -1,6 +1,6 @@
 # Northstar Forge
 
-Northstar Forge is a portfolio-ready LangGraph project that turns a rough idea
+Northstar Forge is a LangGraph project that turns a rough idea
 into a clear execution brief. It acts like a focused project architect:
 classifying the work, shaping the objective, mapping milestones, surfacing
 risks, and producing practical next steps.
